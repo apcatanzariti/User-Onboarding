@@ -32,6 +32,20 @@ function App() {
   const [disabled, setDisabled] = useState(initialDisabled);
 
   const inputChange = (name, value) => {
+    yup
+      .reach(schema, name)
+      .validate(value)
+      .then(() => {
+        setFormErrors({
+          ...formErrors, [name]: ''
+        });
+      })
+      .catch((err) => {
+        setFormErrors({
+          ...formErrors, [name]: err.errors[0]
+        });
+      });
+
     setFormValues({
       ...formValues, [name]: value
     });
