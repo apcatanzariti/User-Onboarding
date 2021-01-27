@@ -8,7 +8,7 @@ export default yup.object().shape({
     email: yup
         .string()
         .required('Valid email required!')
-        .email('Email must be at least 7 characters long!'),
+        .email('Email must be valid!'),
     password: yup
         .string()
         .required('Password is required!')

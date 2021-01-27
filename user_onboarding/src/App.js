@@ -82,7 +82,7 @@ function App() {
 
   return (
     <StyledContainer>
-      <Form values={formValues} change={inputChange} submit={formSubmit} disabled={disabled}/>
+      <Form values={formValues} change={inputChange} submit={formSubmit} disabled={disabled} errors={formErrors}/>
       {
         users.map((user) => {
           return <User details={user}/>

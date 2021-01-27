@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
-export default function Form({ values, change, submit, disabled }) {
+export default function Form({ values, change, submit, disabled, errors }) {
 
     const onChange = (evt) => {
         const { name, value, type, checked } = evt.target;
@@ -28,6 +28,7 @@ export default function Form({ values, change, submit, disabled }) {
                         onChange={onChange}>
                         </input>
                     </label>
+                    <StyledErrorDiv>{errors.name}</StyledErrorDiv>
                 </div>
 
                 <div>
@@ -39,6 +40,7 @@ export default function Form({ values, change, submit, disabled }) {
                         onChange={onChange}>
                         </input>
                     </label>
+                    <StyledErrorDiv>{errors.email}</StyledErrorDiv>
                 </div>
 
                 <div>
@@ -50,6 +52,7 @@ export default function Form({ values, change, submit, disabled }) {
                         onChange={onChange}>
                         </input>
                     </label>
+                    <StyledErrorDiv>{errors.password}</StyledErrorDiv>
                 </div>
 
                 <div>
@@ -81,4 +84,8 @@ const StyledFormContainer = styled.div`
     input {
         margin: 1%;
     }
+`;
+
+const StyledErrorDiv = styled.div`
+    color: red;
 `;
