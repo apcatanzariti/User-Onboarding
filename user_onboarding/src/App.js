@@ -82,12 +82,16 @@ function App() {
 
   return (
     <StyledContainer>
+      <StyledLeftSide>
       <Form values={formValues} change={inputChange} submit={formSubmit} disabled={disabled} errors={formErrors}/>
+      </StyledLeftSide>
+      <StyledRightSide>
       {
         users.map((user) => {
           return <User details={user}/>
         })
       }
+      </StyledRightSide>
     </StyledContainer>
   );
 }
@@ -97,8 +101,21 @@ export default App;
 //--------------------------BEGIN STYLING---------------------------------//
 
 const StyledContainer = styled.div`
-    border: solid 1px red;
+    // border: solid 1px red;
+    font-family: sans-serif;
     margin: 0 auto;
     width: 80%;
-    text-align: center;
+    display: flex;
+`;
+
+const StyledLeftSide = styled.div`
+  border-right: solid 2px #f1f1f1;
+  width: 40%;
+  text-align: center;
+`;
+
+const StyledRightSide = styled.div`
+  // border: solid 1px pink;
+  width: 60%;
+  padding-left: 5%;
 `;

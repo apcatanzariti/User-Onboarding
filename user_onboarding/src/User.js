@@ -5,10 +5,10 @@ import styled from 'styled-components';
 export default function User ({ details }) {
     return (
         <StyledUserContainer>
-        <p>Name: {details.name}</p>
-        <p>Email: {details.email}</p>
-        <p>Password (for some reason): {details.password}</p>
-        <p>Accepted Terms of Service?: {details.terms}</p>
+        <p><b>Name:</b> {details.name}</p>
+        <p><b>Email:</b> {details.email}</p>
+        <p><b>Password (for some reason):</b> {details.password}</p>
+        <p><b>Accepted Terms of Service?:</b> {details.terms}</p>
         </StyledUserContainer>
     );
 };
@@ -16,8 +16,8 @@ export default function User ({ details }) {
 //--------------------------BEGIN STYLING---------------------------------//
 
 const StyledUserContainer = styled.div`
-    border: solid 1px blue;
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
+    border: solid 1px #d36dff;
+    margin: 0% 0 3% 0;
+    padding: 3%;
+    border-radius: 5px;
 `;

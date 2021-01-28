@@ -17,6 +17,7 @@ export default function Form({ values, change, submit, disabled, errors }) {
 
     return (
         <StyledFormContainer>
+            <h1>New User Form!</h1>
             <form onSubmit={onSubmit}>
 
                 <div>
@@ -66,7 +67,7 @@ export default function Form({ values, change, submit, disabled, errors }) {
                     </label>
                 </div>
 
-                <button disabled={disabled}>Welcome Aboard!</button>
+                <StyledButton disabled={disabled}>Welcome Aboard!</StyledButton>
 
             </form>
         </StyledFormContainer>
@@ -76,14 +77,37 @@ export default function Form({ values, change, submit, disabled, errors }) {
 //--------------------------BEGIN STYLING---------------------------------//
 
 const StyledFormContainer = styled.div`
-    border: solid 1px green;
+    // border: solid 1px green;
     margin: 0 auto;
-    width: 80%;
-    text-align: center;
 
     input {
         margin: 1%;
+        color: #d36dff;
+        padding: 1.5%;
+        margin: 2% 0% 2% 1%;
     }
+
+    h1 {
+        color: #d36dff;
+    }
+`;
+
+const StyledButton = styled.button`
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 5px;
+    background-color: white;
+    border: solid 2px #d36dff;
+    color: #d36dff;
+    cursor: pointer;
+    transition: .3s;
+
+    :hover {
+        background-color: #d36dff;
+        color: white;
+    }
+
+    ${props => (props.disabled === true ? `color: #b7b7b7; border-color: #b7b7b7; cursor: default; :hover{color: #b7b7b7; border-color: ##b7b7b7; background-color: white;};` : null)}
 `;
 
 const StyledErrorDiv = styled.div`
